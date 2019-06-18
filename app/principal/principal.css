@@ -89,3 +89,10 @@ extarea:focus, input:focus{
         margin-bottom: 10px;
     }
 }
+
+.not-result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+}

@@ -27,5 +27,8 @@
             </div>
             <detalles ng-if="empresActive.id === empresa.id" dataempresa="empresa" on-close="close()"></detalles>
         </div>
+        <div class="not-result" ng-if="!(empresas | filter:{name: search}).length">
+            No se encontraron resultados para esta busqueda
+        </div>
     </div>
 </div>
