@@ -10,6 +10,9 @@ bindings: {
 controller: ['$rootScope', '$timeout', 'productoservice', 'clienteservice', function detallesController($rootScope, $timeout, productoservice, clienteservice) {
     var self = this;
 
+    /**
+     * inicializa los datos del cliente y los productos
+     */
     self.init = function () {
         productoservice.getProductos(self.dataempresa.id).then(function(data){
             self.productos = data;
@@ -20,6 +23,9 @@ controller: ['$rootScope', '$timeout', 'productoservice', 'clienteservice', func
         });
     }
 
+    /**
+     * busca y devuelve la direccion principal
+     */
     self.getMain = function (objet) {
         var result = objet.filter(function(item) {
             return item.main;
@@ -28,6 +34,9 @@ controller: ['$rootScope', '$timeout', 'productoservice', 'clienteservice', func
         return result[0];
     }
 
+    /**
+     * dispara el evento para cerrar los detalles
+     */
     self.close = function(){
         self.onClose();
       }

@@ -3,6 +3,9 @@ angular.module('myApp')
     function($http) {
       var factory = {};
 
+      /**
+       * carga el json con los datos de los productos
+       */
       factory.getClientes = function(idProducto) {
         return $http({
             method: 'get', 
