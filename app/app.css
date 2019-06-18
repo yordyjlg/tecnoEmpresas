@@ -1,0 +1,24 @@
+/* app css stylesheet */
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header{
+  background: #070944;
+  color: #ffffff;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  font-size: 1.2em;
+}
+
+.body-content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}

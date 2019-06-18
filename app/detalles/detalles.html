@@ -1,0 +1,70 @@
+<div ng-init="init()" class="detalles-content">
+    <div class="box-info">
+        <div class="title principal">
+            Datos de la empresa
+            <img class="title-img" src="../assets/img/ico_company.png">
+            <div ng-click="$ctrl.close()" class="close">X</div>
+        </div>
+        <div class="content-info">
+            <div class="empresa-info-div1">
+                <div class="empresa-line">
+                    <span class="label-title">Nombre:</span> {{$ctrl.dataempresa.name}}
+                </div>
+                <div class="empresa-line">
+                    <span class="label-title">Telefono:</span> {{$ctrl.getMain($ctrl.dataempresa.offices).phone}}
+                </div>
+                <div class="empresa-line">
+                    <span class="label-title">Pais:</span> {{$ctrl.getMain($ctrl.dataempresa.offices).country}}
+                </div>
+            </div>
+            <div  class="empresa-info-div2">
+                <div>
+                    <span class="label-title">Direccion:</span> {{$ctrl.getMain($ctrl.dataempresa.offices).address}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div  class="box-info">
+        <div class="title">
+            Productos
+            <img class="title-img" src="../assets/img/ico_products.png">
+        </div>
+        <div class="content-info">
+            <div class="row-producto" ng-repeat="producto in $ctrl.productos">
+                <span class="label-title">Nombre:</span> {{producto.name}}
+            </div>
+        </div>
+    </div>
+
+    <div  class="box-info">
+        <div class="title">
+            Clientes
+            <img class="title-img" src="../assets/img/ico_clients.png">
+        </div>
+        <div class="content-info">
+            <div class="row-cliente" ng-repeat="cliente in $ctrl.clientes">
+                <div class="empresa-info-div1-client">
+                    <div class="empresa-line">
+                        <span class="label-title">Nombre:</span> {{cliente.name}}
+                    </div>
+                    <div class="empresa-line">
+                        <span class="label-title">Telefono:</span> {{$ctrl.getMain(cliente.offices).phone}}
+                    </div>
+                    <div class="empresa-line pais-escritorio">
+                        <span class="label-title">Pais</span> {{$ctrl.getMain(cliente.offices).country}}
+                    </div>
+                </div>
+                <div  class="empresa-info-div2 client">
+                    <div class="empresa-line">
+                        <span class="label-title">Direccion</span> {{$ctrl.getMain(cliente.offices).address}}
+                    </div>
+
+                    <div class="empresa-line pais-movil">
+                        <span class="label-title">Pais</span> {{$ctrl.getMain(cliente.offices).country}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

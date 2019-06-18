@@ -1,0 +1,31 @@
+<div ng-init="init()" class="container-search">
+    <div class="container-search-input">
+        <img src="../assets/img/ico_search.png">
+        <input type="text" ng-model="search" name="search-tecno-empresas" placeholder="Buscar empresa">
+        <span class="clear-x" ng-click='clearSearch()' ng-if="search.length">x</span>
+    </div>
+</div>
+
+<div class="empresas-container">
+    <div class="empresas-title">
+        Empresas
+    </div>
+
+    <div class="empresas-table">
+        <div class="empresas-table-header">
+            <div class="table-td nombre">Nombre de empresa</div>
+            <div class="table-td address-content">Ubicacion</div>
+        </div>
+        <div class="table-body-container" ng-repeat="empresa in empresas | filter:{name: search}" ng-click='selectEmpresa(empresa)' ng-class="{'active-row': empresActive.id === empresa.id}">
+            <div class="empresas-table-body">
+                <div class="table-td nombre">{{empresa.name}}</div>
+                <div class="table-td address-content">
+                    <div class="address" ng-repeat="office in empresa.offices">
+                        <div>{{office.address}}</div>
+                    </div>
+                </div>
+            </div>
+            <detalles ng-if="empresActive.id === empresa.id" dataempresa="empresa" on-close="close()"></detalles>
+        </div>
+    </div>
+</div>

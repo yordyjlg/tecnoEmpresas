@@ -1,0 +1,76 @@
+.detalles-content{
+    padding: 10px 15px 0px 15px;
+}
+
+.box-info{
+    margin-bottom: 15px;
+}
+
+.content-info{
+    margin-left: 30px;
+    font-size: 0.8em;
+}
+
+.label-title{
+    font-weight: bold;
+}
+
+.title-img{
+    height: 20px;
+    margin-left: 20px;
+}
+
+.title{
+    color: #0d0d57;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.title.principal{
+    display: flex;
+    align-items: center;
+}
+
+.close{
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.empresa-info-div1, .empresa-info-div1-client{
+    display: flex;
+}
+
+.empresa-line{
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.row-producto{
+    margin-bottom: 10px;
+}
+
+.row-cliente{
+    margin-bottom: 20px;
+}
+
+.pais-movil{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .empresa-info-div1 {
+        flex-direction: column;
+    }
+
+    .pais-escritorio{
+        display: none;
+    }
+
+    .pais-movil{
+        display: initial;
+    }
+
+    .empresa-info-div2.client {
+        display: flex;
+    }
+}
